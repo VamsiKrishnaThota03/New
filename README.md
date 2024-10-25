@@ -1,70 +1,56 @@
-# Getting Started with Create React App
+# Ride-Sharing Platform
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project is a full-fledged ride-sharing platform built with three distinct user roles: **Traveler**, **Traveler Companion**, and **Admin**. Each role comes with specific features and responsibilities to ensure a seamless and secure ride-sharing experience.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+### Traveler
+1. **Ride Sharing**: Travelers can share ride details such as Trip ID, Driver Name, Driver Phone Number, and Cab Number via WhatsApp or SMS while the trip is in progress. The link expires automatically once the trip is complete.
+2. **Audit Trail**: Travelers can review the audit trail of the rides they have shared.
 
-### `npm start`
+### Traveler Companion
+1. **Ride Tracking**: Track the real-time location of the traveler during the ride.
+2. **Notifications**: 
+   - Receive notifications when the trip is complete.
+   - Get notified when the cab enters a geofenced area near the traveler’s drop-off location.
+3. **Feedback**: Share feedback about the ride experience, which is then submitted to the admin.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Admin
+1. **View Rides**: Admins have access to view all rides shared by travelers.
+2. **Feedback Management**: Admins can review the feedback shared by users.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Key Constraints
+1. **Authentication**: The platform uses robust authentication mechanisms to ensure account security.
+2. **Scalability**: Scalable strategies are employed to accommodate an expanding user base as the platform grows.
 
-### `npm test`
+## Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **Frontend**: React.js, CSS, Bootstrap
+- **Backend**: Node.js, Express.js
+- **Database**: PostgreSQL for handling user data, ride information, and audit trails.
+- **WebSocket**: For real-time ride tracking and notifications.
+- **Map**: Leaflet.js for real-time map tracking of the traveler.
+- 
 
-### `npm run build`
+API Endpoints
+Here are some of the key API endpoints for the platform:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1.POST /api/signup: Sign up a new user (traveler, companion, or admin).
+2.POST /api/login: Authenticate users and return a JWT token.
+3.GET /api/rides/
+4.: Get ride details by trip ID.
+5.POST /api/rides/share: Share ride details via SMS or WhatsApp.
+6.GET /api/feedback: Fetch user feedback for admin.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Demonstration
+Traveler: Share ride details, track rides, and review shared rides through the audit trail.
+Traveler Companion: Track the traveler's location in real time, receive notifications, and share feedback with the admin.
+Admin: View all shared rides and review feedback from users.
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Future Improvements
+Implement more detailed ride analytics for the admin.
+Introduce rating systems for both travelers and drivers.
+Add support for multiple languages.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
